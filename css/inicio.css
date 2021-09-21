@@ -1,0 +1,20 @@
+body{
+background-color: #FFF446 ;
+}
+img{
+align-content:center;
+}
+.container{
+width: 100%;
+max-width: 800px;
+    margin: auto;
+    position: relative;
+    
+    
+}
+.btn{
+    width: auto;
+    height: auto;
+background-origin: padding-box;
+    background-color: cornsilk;
+}

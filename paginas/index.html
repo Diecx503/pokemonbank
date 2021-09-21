@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/inicio.css">
+    <title>Pokemon Bank</title>
+
+    <!-- Inicio de Header -->
+
+    <div class="container">
+        <h1>Bienvenido</h1>
+        <img src="/imagenes/pokemonlogo.png" width="890px" height="525px">
+    </div>
+</head>
+
+<body>
+    <div class="modal-dialog text=center">
+        <div class="col-sm-8 main-section">
+            <div class="modal-content">
+
+                <form class="col-12">
+                    <div class="form-group">
+                       
+                        <input type="text" name="Usuario" value="" placeholder="Usuario">
+
+                        <input id="PIN" type="password" class="form-control" placeholder="PIN DE 4 DIGITOS" maxlength="4">
+                    </div>
+                    <button type="Button" class="btn" onclick="login()"><i class="fas fa-sign-in-alt"></i>Ingresar</button>
+               
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="/js/login.js"> </script>
+<script src="/js/jquery-3.2.1.slim.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</html>
