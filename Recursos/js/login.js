@@ -1,12 +1,13 @@
 
-function primero(){
+function login(){
     var pin= document.getElementById('PIN');
     pin.type= "text"
     var PIN = pin.value;
      if (PIN=='2021'){
-         document.location.href="/principal.html"
+         document.location.href="principal.html";
   }
-if(PIN==''){
+}
+/*if(PIN==''){
     swal.fire({
         title: 'Atencion',
         text: 'El campo PIN no puede quedar vacio',
@@ -25,5 +26,5 @@ if(PIN==''){
               
 }
 
-}
+}*/
 
