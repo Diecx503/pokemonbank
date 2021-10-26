@@ -1,11 +1,9 @@
 
 function login(){
-    var usuario= document.getElementById('usuario');
     var pin= document.getElementById('PIN');
     pin.type= "text"
     var PIN = pin.value;
-    var usuario=Ash Ketchum.value;
-     if (PIN=='1234' + usuario=='Ash Ketchum'){
+     if (PIN=='1234'){
          document.location.href="principal.html";
          
   }
