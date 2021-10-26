@@ -1,10 +1,13 @@
 
 function login(){
+    var usuario= document.getElementById('usuario');
     var pin= document.getElementById('PIN');
     pin.type= "text"
     var PIN = pin.value;
-     if (PIN=='2021'){
+    var usuario=Ash Ketchum.value;
+     if (PIN=='1234' + usuario=='Ash Ketchum'){
          document.location.href="principal.html";
+         
   }
 
 if(PIN==''){
@@ -15,7 +18,8 @@ if(PIN==''){
         confirmbuttonText:'intentar',
        backdrop: 'true',
     })
-}else{
+}
+    else{
     swal.fire({
       title:'Error',
         text: 'PIN no valido',
@@ -23,10 +27,11 @@ if(PIN==''){
          confirmbuttonText: 'Avanzar',
         backdrop: 'true'
     })
-              
+    
 }
-
-}
+ 
+ }
+    
 
 
 
