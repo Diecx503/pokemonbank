@@ -30,10 +30,14 @@ if(PIN==''){
  
  }
     
-//mostrar saldo inicial $500
-var psaldo = document.getElementById('saldototal');
-var tIngreso = 500;
-psaldo.innerHTML = "500".toFixed(2) // toFixe
+//mostrar nombre y cuenta
+function nombre(){
+fetch('poke.JSON')
+    .then (respuesta => respuesta.JSON();)
+    .then (respuesta = document.getElementById('nombrecuenta'); )
+
+}
+
 
 
 // 

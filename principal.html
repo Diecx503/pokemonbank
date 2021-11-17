@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Recursos/css/bootstrap.css">
     <link rel="stylesheet" href="Recursos/css/inicio.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-    >
+    
     <title>Banco Pokemon</title>
 
 </head>
@@ -20,7 +20,7 @@
         <div class="container">
             <h1>BIENVENIDOS A POKEMON BANK</h1>
             <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-dark ">
-                <a class="navbar-brand" id="nombrecuenta"> Cuenta: 0987654321</a>
+                <a class="navbar-brand" id="nombrecuenta"> </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -99,75 +99,17 @@
                 </tr>
             </tbody>
         </table>
-
-
     </div>
-    <div class="container">
-        <canvas id="myChart"></canvas>
-    </div>
+  
 
     <script>
-        let myChart = document.getElementById('myChart').getContext('2d');
-
-        // Global Options
-        Chart.defaults.global.defaultFontFamily = 'Lato';
-        Chart.defaults.global.defaultFontSize = 18;
-        Chart.defaults.global.defaultFontColor = '#777';
-
-        let massPopChart = new Chart(myChart, {
-            type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-            data: {
-                labels: ['TE949202469', 'PI4467858932', 'SD46356453', ],
-                datasets: [{
-                    label: 'Transferencias',
-                    data: [5,10 ,20,30 ],
-                    //backgroundColor:'green',
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(255, 206, 86, 0.6)',
-                        'rgba(75, 192, 192, 0.6)',
-
-                    ],
-                    borderWidth: 1,
-                    borderColor: '#777',
-                    hoverBorderWidth: 3,
-                    hoverBorderColor: '#000'
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Historial de transferencias',
-                    fontSize: 25
-                },
-                legend: {
-                    display: true,
-                    position: 'right',
-                    labels: {
-                        fontColor: '#000'
-                    }
-                },
-                layout: {
-                    padding: {
-                        left: 50,
-                        right: 0,
-                        bottom: 0,
-                        top: 0
-                    }
-                },
-                tooltips: {
-                    enabled: true
-                }
-            }
-        });
-
+        
     </script>
     <!-- Inicio del footer -->
     <footer class="footer">
         <h4> Derechos resevador por pokemon bank hasta el año 2022</h4>
     </footer>
-
+    <script src="Recursos/js/%C2%A8poke.json"></script>
     <script src="/Recursos/js/login.js"> </script>
     <script src="/Recursos/js/jquery-3.2.1.slim.min.js"></script>
     <script src="Recursos/js/bootstrap.js"></script>
