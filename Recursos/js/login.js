@@ -6,7 +6,15 @@ function login(){
      if (PIN=='1234'){
          document.location.href="principal.html";
          
-  }
+  }}
+
+  let credenciales ={
+    nombre:"Ash Ketchum",
+    cuenta: "0987654321",
+    saldoInicial: 500.00
+}
+guardarData("credenciales", credenciales);
+  
 
 if(PIN==''){
     swal.fire({
@@ -28,17 +36,7 @@ if(PIN==''){
     
 }
  
- }
+ 
     
-//mostrar nombre y cuenta
-function nombre(){
-fetch('poke.JSON')
-    .then (respuesta => respuesta.JSON();)
-    .then (respuesta = document.getElementById('nombrecuenta'); )
 
-}
-
-
-
-// 
 
