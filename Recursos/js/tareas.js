@@ -16,7 +16,7 @@ function guardardatos() {
     var saldo = document.getElementById('saldototal');
     saldo.innerHTML = "$" + informacion.saldoInicial;
 }
-guardardatos();
+//guardardatos();
 
 
 //CREANDO EL LOCALSTORAGE DE TRANSACCIONES 
@@ -31,7 +31,10 @@ var fGuardarH= function guardarhistorial(){
     localStorage.setItem("historial", JSON.stringify(datos));
 }
 
-function depositos(){
-    
+function ingresos(){
+    let valor= document.getElementById('montodeposito').Value;
+    console.log(valor);
+
+
 }
 

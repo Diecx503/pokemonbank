@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Recursos/css/principal.css">
     <link rel="stylesheet" href="Recursos/css/bootstrap.css">
     <link rel="stylesheet" href="Recursos/css/inicio.css">
-    <title>Retiros</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    
+    <title>Banco Pokemon</title>
 
 </head>
 
-<body>
+<body> 
 
     <!-- Inicio de Header -->
     <header>
         <div class="container">
-            <h1>Retiros</h1>
+            <h1>BIENVENIDOS A POKEMON BANK</h1>
             <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-dark ">
                 <a class="navbar-brand" id="nombrecuenta"> </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,50 +39,33 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="retiro.html">Retiro</a>
                         </li>
-                        <li class="nav-item active dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Pago de servicios
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="energia.html"> Energía eléctrica</a>
-                                <a class="dropdown-item" href="internet.html">Internet, telefonía</a>
-                                <a class="dropdown-item" href="agua.html"> Agua potable
-                                </a>
-                            </div>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="pagos.html">Pago de servicios</a>
                         </li>
-                     <li class="nav-item active">
+
+                            
+                        </li>
+                        <li class="nav-item active">
                             <a class="nav-link" href="index.html">Cerrar sesion</a>
                         </li>
                     </ul>
+
                 </div>
             </nav>
-        </div>
 
+        </div>
     </header>
     <div class="container">
     <div align="center">
     <table class="table table-bordered table-dark">
  
   <tbody>
-   
-     
-     
-      
-   <tr>
-<td><label style="font-size: 14px;">
-Monto:</label></td>
-<td><input id="retitomonto"  type="text" value="" autocomplete="off" style="width: 220px !important; font-size: 14px;" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all positive" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false"></td>
-</tr>
-
-    
     <tr>
-     
-      <td><label style="font-size: 14px;">
-Hacia:</label></td>
-<td><input id="retirohacia"  type="text" value="" autocomplete="off" style="width: 220px !important; font-size: 14px;" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all positive" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false"></td>
-  
-      
-    </tr>
+        <td><label style="font-size: 14px;">
+        Monto:</label></td>
+        <td><input id="montodeposito"  type="text" value="" autocomplete="off" style="width: 220px !important; font-size: 14px;" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all positive" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false"></td>
+        <td><button type="submit" id="btndeposito" class="btn btn-warning" onclick="">Retiro</button> </td>
+        </tr> 
   
   </tbody>
 </table>
@@ -101,4 +87,5 @@ Hacia:</label></td>
     <script src="Recursos/js/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
+
 </html>
