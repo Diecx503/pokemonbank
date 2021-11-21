@@ -1,42 +1,28 @@
 
-function login(){
-    var pin= document.getElementById('PIN');
-    pin.type= "text"
+function login() {
+    var pin = document.getElementById('PIN');
+    pin.type = "text"
     var PIN = pin.value;
-     if (PIN=='1234'){
-         document.location.href="principal.html";
-         
-  }}
+    if (PIN == '1234') {
+        document.location.href = "principal.html";
+    }
 
-  let credenciales ={
-    nombre:"Ash Ketchum",
-    cuenta: "0987654321",
-    saldoInicial: 500.00
+    if (PIN == '') {
+        swal.fire({
+            title: 'Atencion',
+            text: 'El campo PIN no puede quedar vacio',
+            icon: 'warning',
+            confirmbuttonText: 'intentar',
+            backdrop: 'true',
+        })
+    } else {
+        swal.fire({
+            title: 'Error',
+            text: 'PIN no valido',
+            icon: 'Error',
+            confirmbuttonText: 'Avanzar',
+            backdrop: 'true'
+        })
+
+    }
 }
-guardarData("credenciales", credenciales);
-  
-
-if(PIN==''){
-    swal.fire({
-        title: 'Atencion',
-        text: 'El campo PIN no puede quedar vacio',
-        icon: 'warning',
-        confirmbuttonText:'intentar',
-       backdrop: 'true',
-    })
-}
-    else{
-    swal.fire({
-      title:'Error',
-        text: 'PIN no valido',
-        icon: 'Error',
-         confirmbuttonText: 'Avanzar',
-        backdrop: 'true'
-    })
-    
-}
- 
- 
-    
-
-
