@@ -64,7 +64,7 @@
         <label style="font-size: 14px;">Pagos de servicios</label>
     </td>
    <td>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <select class="form-control" id="pagos">
         <option>Energia electrica</option>
         <option>Agua</option>
         <option>Cable-internet</option>
@@ -72,10 +72,13 @@
    </td>
       </tr>
 <tr>
-    <td><label style="font-size: 14px;">
-    Monto:</label></td>
-    <td><input id="montodeposito"  type="text" value="" autocomplete="off" style="width: 220px !important; font-size: 14px;" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all positive" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false"></td>
-    <td><button type="submit" id="btndeposito" class="btn btn-warning" onclick="">Pagos</button> </td>
+    <td>
+    <label style="font-size: 14px;">
+    Monto:</label> <input type="number" class="form-control" id="montodepago" aria-describedby="pago" placeholder="monto" min="0.01" step="0.01" required></td>
+</td> 
+    
+    <td><button type="submit" id="btndepago" class="btn btn-warning" onclick="pago();">Pagos</button> 
+    </td>
     </tr> 
   </tbody>
 </table>
@@ -89,13 +92,16 @@
         
     <footer class="footer">
     <h4> Derechos resevador por pokemon bank hasta el año 2022</h4>
-    </footer>
-    <script src="Recursos/js/tareas.js"></script>
-    <script src="Recursos/js/login.js"> </script>
-    <script src="Recursos/js/jquery-3.2.1.slim.min.js"></script>
-    <script src="Recursos/js/bootstrap.js"></script>
-    <script src="Recursos/js/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</footer>
+<script src="Recursos/js/tareas.js"></script>
+<script src="Recursos/js/login.js"> </script>
+<script src="Recursos/js/jquery-3.2.1.slim.min.js"></script>
+<script src="Recursos/js/jspdf.min.js"></script>
+<script src="Recursos/js/bootstrap.js"></script>
+<script src="Recursos/js/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </body>
 
 </html>
+
