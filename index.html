@@ -22,16 +22,16 @@
 
     <div class="modal-dialog text=center">
         <div class="col-sm-8 main-section">
-            <div class="modal-content">
+            <div class="modal-content" id="log">
 
-                <form class="col-12">
+                <form class="col-12" id="form-log">
                     <div class="form-group">
                        
-                        <input id="usuario" type="text" name="Usuario" value="" placeholder="Usuario">
+                        <!--<input id="usuario" type="text" name="Usuario" value="" placeholder="Usuario">-->
 
                         <input id="PIN" type="password" class="form-control" placeholder="PIN DE 4 DIGITOS" maxlength="4">
                     </div>
-                    <button type="Button" class="btn" onclick="login()"><i class="fas fa-sign-in-alt"></i>Ingresar</button>
+                    <button type="Button" class="btn btn-outline-secondary" onclick="login()"><i class="fas fa-sign-in-alt"></i>Ingresar</button>
                
                 </form>
 
@@ -40,8 +40,13 @@
     </div>
 <body>
 <!-- Inicio del footer -->
-    <footer class="footer">
-    <h4> Derechos resevador por pokemon bank hasta el año 2022</h4>
+    <footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-1" style="background-color: #4682B4;">
+    © 2021 Copyright:
+    <a class="text-dark">Alejandro </a>
+  </div>
+  <!-- Copyright -->
 </footer>
 <script src="Recursos/js/tareas.js"></script>
 <script src="Recursos/js/login.js"> </script>
