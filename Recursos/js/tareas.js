@@ -35,11 +35,12 @@ datos = [{
 }];
 
 function guardarhistorial() {
-    localStorage.setItem("historial", JSON.stringify(datos));
+    localStorage.setItem("datos", JSON.stringify(datos));
 }
 
 function cargarHistorial() {
-    datosH = JSON.parse(localStorage.getItem("historial"));
+    datos = JSON.parse(localStorage.getItem("datos"));
+    console.log(datos);
 }
 cargarHistorial();
 
@@ -71,7 +72,7 @@ function retiro() {
 
 function pago() {
     vfecha = new Date().toLocaleString();
-    vtransaccion = "pago";
+    vtransaccion = "Pago del servicio de "+ document.getElementById('pagos').value;
     var vPago = document.getElementById('montodepago').value;
     nuevopago = {
         fecha: vfecha,
@@ -83,10 +84,26 @@ function pago() {
 
 }
 
+
+function tablaHistorial(){
+    var tbody = document.querySelector('#tablaH tbody');
+    tbody="";
+    let fechaT=[]
+    cDatos= datos.forEach(function(elemento){
+        console.log(elemento);
+    });
+     fechaT = JSON.parse(localStorage.getItem('datos'));   
+    console.log(cDatos);
+    console.log(fechaT);
+
+}
+tablaHistorial();
+
+/*
 var tabla = document.getElementById('tablaH');
 
 function tablaHistorial() {
-    let informacionTabla = JSON.parse(localStorage.getItem('historial'));
+    let informacionTabla = JSON.parse(localStorage.getItem('datos'));
     var tablaT = [];
     let tablaHistorial = "<tr> <td>" + informacionTabla.vfecha + "</td>  <td>" + informacionTabla.vtransaccion + "</td> <td>" + informacionTabla.vmonto + "</td></tr>";
     tablaT.push(tablaHistorial);
@@ -99,6 +116,6 @@ tablaHistorial();
 function imprimirDatos(){
 var tablaInicio= localStorage.getItem('tablaTransacciones');
 document.getElementById("tablaH").innerHTML = tablaInicio;
-
-
 }
+
+*/
