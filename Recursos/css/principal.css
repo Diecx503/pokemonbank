@@ -1,7 +1,7 @@
 /*Importaciones de tipografias*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap'); /*font-family: 'Noto Sans', sans-serif;*/
 body {
-    background-color: #FFF446;
+    background-color: rgb(240, 225, 22);
      font-family:'Noto Sans', sans-serif;
 }
 
@@ -21,7 +21,7 @@ H1 {
 }
 
 #nombrecuenta{
-    color: white;
+    color: rgb(240, 225, 22);
 }
 
 footer{
@@ -35,7 +35,7 @@ width: 300px;
 
 
 body{
-background-color: white;
+background-color: rgb(240, 225, 22);
 }
 
 img{
