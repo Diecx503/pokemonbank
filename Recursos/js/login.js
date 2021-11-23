@@ -1,4 +1,18 @@
 
+//CREACION DE LOCALSTORAGE PARA CREDENCIALES
+if (cargarD("credenciales").length<= 0) {
+    let credenciales = {
+       nombre: "Ash Ketchum",
+       cuenta: "0987654321",
+       saldoInicial: 500.00
+   }
+   guardarD ("credenciales", credenciales);   
+   }
+   else{
+       let credenciales = cargarD("credenciales");
+   }
+
+//VALIDANDO LOS DATOS DEL LOGIN
 function login() {
     var pin = document.getElementById('PIN');
     pin.type = "text"

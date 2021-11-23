@@ -63,10 +63,11 @@
                             <label style="font-size: 14px;">Monto:</label>
                         </td>
                         <td>
-                            <input type="number" class="form-control" id="montodeposito" aria-describedby="deposito" placeholder="deposito" min="0.01" step="0.01" required>
+                            <input type="number" class="form-control" id="montodeposito" aria-describedby="deposito" placeholder="Deposito" min="0.01" step="0.01" required>
+                        <span id="llenarcampo"></span>
                         </td>
                         <td> 
-                        <button type="submit" id="btndeposito" class="btn btn-warning" onclick="ingresos()">Deposito</button> </td>
+                        <button type="submit" id="btndeposito" class="btn btn-warning" onclick="ingresos();imprimirTransferencias();">Deposito</button> </td>
                     </tr> 
         
         </tbody>
@@ -84,15 +85,14 @@
     <footer class="footer">
         © 2021 Copyright: Alejandro
     </footer>
-    
-    <script src="Recursos/js/tareas.js"></script>
-    <script src="Recursos/js/login.js"> </script>
     <script src="Recursos/js/jquery-3.2.1.slim.min.js"></script>
     <script src="Recursos/js/jspdf.min.js"></script>
     <script src="Recursos/js/bootstrap.js"></script>
     <script src="Recursos/js/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    
+    <script src="Recursos/js/metodos.js"></script>
+    <script src="Recursos/js/tareas.js"></script>
+    <script src="Recursos/js/login.js"> </script>
 </body>
 
 </html>

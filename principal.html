@@ -58,38 +58,42 @@
         <center>
 
             <h2>Historial de transferencias</h2>
-            <img class="" src="Recursos/imagenes/poke.png" id="img-inicio">
+            <img class="" src="Recursos/imagenes/poke.png" width="300" height="300">
 
         </center>
-        <table class="table table-dark" id="tablaH">
+        <table class="table table-dark text-center">
             <thead>
                 <tr>
-                    <th scope="col"></th>
+                    
                     <th scope="col">Fecha</th>
                     <th scope="col">Transaccion</th>
                     <th scope="col">Cantidad</th>
                 </tr>
             </thead>
+            <tbody id="tablaH">
+                
+            </tbody>
         </table>
         </div>
+    <div class="container">
+<h2>Graficas</h2>
+<canvas id="myChart" width="400" height="400"></canvas>
 
-    <script>
-        
-    </script>
+    </div>
     <!-- Inicio del footer -->
     <footer class="footer">
         © 2021 Copyright: Alejandro
     </footer>
     
     <!--SCRIPTS-->
-    <script src="Recursos/js/tareas.js"></script>
-    <script src="Recursos/js/login.js"> </script>
     <script src="Recursos/js/jquery-3.2.1.slim.min.js"></script>
     <script src="Recursos/js/jspdf.min.js"></script>
     <script src="Recursos/js/bootstrap.js"></script>
     <script src="Recursos/js/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    
+    <script src="Recursos/js/metodos.js"></script>
+    <script src="Recursos/js/tareas.js"></script>
+    <script src="Recursos/js/login.js"> </script>
 </body>
 
 </html>
