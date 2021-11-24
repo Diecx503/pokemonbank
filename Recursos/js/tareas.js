@@ -24,6 +24,9 @@ let montoTotal = parseFloat(credenciales.saldoInicial).toFixed(2);
 let operacionM = 0;
 
 function ingresos() {
+    
+    contador= contador + 1;
+    localStorage.setItem('Cgrafica',contador);
     vfecha = new Date().toLocaleString();
     vtransaccion = "Deposito";
     var vDeposito = document.getElementById('montodeposito').value;
@@ -47,6 +50,7 @@ function ingresos() {
         
     })
 }
+var contador= 0;
 
 function retiro() {
     vfecha = new Date().toLocaleString();
@@ -138,7 +142,7 @@ let cargarP = function(datos){
         $("#saldototal").html("$" + parseFloat(datos.saldoInicial).toFixed(2));
     }
 };
-
+/*
 function imprimirTransferencias() 
 {
     var doc = new jsPDF()
@@ -161,6 +165,7 @@ doc.autoPrint({Variant:'non-conform'});
 doc.save('comprobante.pdf');
 
 }
+*/
 function graficasTransacciones(){
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
@@ -169,21 +174,16 @@ const myChart = new Chart(ctx, {
         labels: ["ingresos","retio","pago"],
         datasets: [{
             label: 'myChart',
-            data: [localStorage.getItem("transaccion")],
+            data: [localStorage.getItem("Cgrafica")],
+            
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
                 'rgba(255, 159, 64, 0.2)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
                 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1

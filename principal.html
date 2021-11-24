@@ -12,7 +12,7 @@
 
 </head>
 
-<body> 
+<body onload="graficasTransacciones();"> 
 
     <!-- Inicio de Header -->
     <header>
@@ -75,9 +75,10 @@
             </tbody>
         </table>
         </div>
-    <div class="container">
+    <div class= "container" onload="graficasTransacciones();" id="graficasT">
+        
 <h2>Graficas</h2>
-<canvas id="myChart" width="400" height="400"></canvas>
+<canvas id="myChart" width="40" height="40"></canvas>
 
     </div>
     <!-- Inicio del footer -->
@@ -86,6 +87,7 @@
     </footer>
     
     <!--SCRIPTS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="Recursos/js/jquery-3.2.1.slim.min.js"></script>
     <script src="Recursos/js/jspdf.min.js"></script>
     <script src="Recursos/js/bootstrap.js"></script>
