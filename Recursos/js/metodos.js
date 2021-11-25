@@ -9,3 +9,8 @@ var cargarD = function(nombreD){
     return datosG;
 }
 
+// LIMPIAR FORMULARIO
+let limpiarD = function (monto){
+    document.getElementById(monto).value = "";
+}
+

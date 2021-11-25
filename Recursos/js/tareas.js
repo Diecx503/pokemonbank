@@ -1,7 +1,6 @@
 
-
-
 let datos = [];
+
 if (cargarD("credenciales").length<= 0) {
     window.location.href = "index.html";
 }
@@ -20,21 +19,51 @@ else {
 
 let credenciales = cargarD("credenciales");
 
-let montoTotal = parseFloat(credenciales.saldoInicial).toFixed(2);
+let montoTotal = 0;
 let operacionM = 0;
+let vM = 0;
+var contadorI;
+var contadorE;
+if(cargarD("contadorI").length<=0){
+    contadorI = 1;
+    guardarD("contadorI", contadorI);
+}
+else{
+ contadorI = cargarD("contadorI"); 
+}
+if(cargarD("contadorE").length<=0){
+    contadorE = 0;
+    guardarD("contadorE", contadorE);
+}
+else
+{
+ contadorE = cargarD("contadorE");
+}
 
 function ingresos() {
-    
-    contador= contador + 1;
-    localStorage.setItem('Cgrafica',contador);
     vfecha = new Date().toLocaleString();
     vtransaccion = "Deposito";
     var vDeposito = document.getElementById('montodeposito').value;
+    if(vDeposito == ''){
+        swal.fire({
+            title: 'Atencion',
+            text: 'El campo Deposito no puede quedar vacio',
+            icon: 'warning',
+            confirmbuttonText: 'intentar',
+            backdrop: 'true',
+        })
+    }
+    else
+    {
+    contadorI = parseFloat(contadorI) + 1;
+    guardarD("contadorI", contadorI);
+    vM = document.getElementById('montodeposito').value;    
     nuevoDeposito = {
         fecha: vfecha,
         transaccion: vtransaccion,
         monto: vDeposito
     }
+    montoTotal = parseFloat(credenciales.saldoInicial).toFixed(2);
     operacionM = parseFloat(montoTotal) + parseFloat(vDeposito);
     credenciales.saldoInicial = operacionM.toFixed(2);
     guardarD("credenciales", credenciales);
@@ -42,26 +71,45 @@ function ingresos() {
     console.log(credenciales.saldoInicial);
     datos.push(nuevoDeposito);
     guardarD("datos" , datos);
-    swal.fire({
+    swal.fire ({
         title: 'Exito',
         text: 'Su transaccion ha sido exitosa',
         icon: "success",
-        button: "Imprimir comprobante",
-        
+        button: {
+            ok: "Aceptar", 
+        }
     })
+    limpiarD('montodeposito');
+  }
 }
-var contador= 0;
+
 
 function retiro() {
     vfecha = new Date().toLocaleString();
     vtransaccion = "Retiro";
     var vRetiro = document.getElementById('montoderetiro').value;
-    if(montoTotal > vRetiro){
+    
+    if (vRetiro == '') {
+        swal.fire({
+            title: 'Atencion',
+            text: 'El campo Retiro no puede quedar vacio',
+            icon: 'warning',
+            confirmbuttonText: 'intentar',
+            backdrop: 'true',
+        })
+    }
+    else{
+
+    if( parseFloat(credenciales.saldoInicial) > vRetiro){
     nuevoRetiro = {
         fecha: vfecha,
         transaccion: vtransaccion,
         monto: vRetiro
     }
+    contadorE = parseFloat(contadorE) + 1;
+    guardarD("contadorE", contadorE);
+    vM = document.getElementById('montoderetiro').value;
+    montoTotal = parseFloat(credenciales.saldoInicial).toFixed(2);
     operacionM = parseFloat(montoTotal) - parseFloat(vRetiro);
     credenciales.saldoInicial = operacionM.toFixed(2);
     guardarD("credenciales", credenciales);
@@ -74,6 +122,7 @@ function retiro() {
         button: "Imprimir comprobante",
         
     })
+    limpiarD('montoderetiro');
     }
     else{
         swal.fire({
@@ -83,20 +132,37 @@ function retiro() {
             confirmbuttonText: 'Avanzar',
             backdrop: 'true'
         })
+        limpiarD('montoderetiro');
     }
+  }
 }
 
 function pago() {
     vfecha = new Date().toLocaleString();
     vtransaccion = "Pago del servicio de "+ document.getElementById('pagos').value;
     var vPago = document.getElementById('montodepago').value;
-    if(montoTotal > vPago){
+if(vPago == ''){
+  swal.fire({
+            title: 'Atencion',
+            text: 'El campo Monto no puede quedar vacio',
+            icon: 'warning',
+            confirmbuttonText: 'intentar',
+            backdrop: 'true',
+        })
+}
+else{
+
+    if( parseFloat(credenciales.saldoInicial) > vPago){
     nuevopago = {
         fecha: vfecha,
         transaccion: vtransaccion,
         monto: vPago
 
     }
+    contadorE = parseFloat(contadorE) + 1;
+    guardarD("contadorE", contadorE);
+    vM = document.getElementById('montodepago').value;
+    montoTotal = parseFloat(credenciales.saldoInicial).toFixed(2);
     operacionM = parseFloat(montoTotal) - parseFloat(vPago);
     credenciales.saldoInicial = operacionM.toFixed(2);
     guardarD("credenciales", credenciales);
@@ -109,7 +175,7 @@ function pago() {
         button: "Imprimir comprobante",
         
     })
-
+        limpiarD('montodepago');
     }
     else{
         swal.fire({
@@ -119,7 +185,9 @@ function pago() {
             confirmbuttonText: 'Avanzar',
             backdrop: 'true'
         })
+        limpiarD('montodepago');
     }
+  }
 }
 
 $(document).ready(function(){
@@ -142,51 +210,55 @@ let cargarP = function(datos){
         $("#saldototal").html("$" + parseFloat(datos.saldoInicial).toFixed(2));
     }
 };
-/*
+
+
 function imprimirTransferencias() 
 {
     var doc = new jsPDF()
+doc.setFontType('bold');
+doc.setFontSize(22);
+    doc.text(50, 20, 'COMPROBANTE DE TRANSACCIÓN');
+doc.setFontSize(16);    
+doc.setFont('courier');
+   doc.text(20, 30, 'Numero de cuenta: ' +  credenciales.cuenta);
 
-    doc.text(20, 20, 'Comprobante de ' + '' + document.getElementById("btndeposito").value);
+   doc.text(20, 40, 'Numero de usuario: ' +  credenciales.nombre);   
     
-    doc.text(20, 30, 'Numero de cuenta: ' +  localStorage.getItem("credenciales"));
-    
-   
-    doc.text(20, 40, 'Fecha' + fecha);
-    
-    
-    doc.text(20, 50, 'vMonto' + monto);
-    
-    doc.setFont('courier')
-    doc.setFontType('bolditalic')
-    doc.text(20, 60, 'This is courier bolditalic.')
+   doc.text(20, 50, 'Fecha: ' +  vfecha); 
+
+   doc.text(20, 60, 'Tipo de transaccion: ' +  vtransaccion);
+
+   doc.text(20, 70, 'Monto: $' + vM);
+
+   doc.text(20, 80, 'Saldo Total: $' + credenciales.saldoInicial);
+
     
 doc.autoPrint({Variant:'non-conform'});
 doc.save('comprobante.pdf');
 
 }
-*/
+
+
 function graficasTransacciones(){
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
-        labels: ["ingresos","retio","pago"],
+        labels: ['Ingresos', 'Egresos'],
         datasets: [{
-            label: 'myChart',
-            data: [localStorage.getItem("Cgrafica")],
-            
+            label:'Ingresos y Egresos',
+            data: [cargarD("contadorI"), cargarD("contadorE")],
+
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(54, 162, 235)',
+                'rgba(255, 0, 0)'
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(255, 0, 0, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 2,
+            hoverOffset: 4
         }]
     },
     options: {
